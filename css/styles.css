@@ -130,6 +130,9 @@ header {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.current-page {
+  color: var(--secondary-text-color);
+}
 .current-page::after {
   content: "";
   display: block;
@@ -618,7 +621,8 @@ address {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.portfolio-card:hover .card-overlay {
+.portfolio-card:hover,
+.portfolio-card:focus .card-overlay {
   transform: translateY(0);
 }
 .portfolio-card:hover,
