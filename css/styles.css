@@ -565,16 +565,15 @@ ol {
 .modal-wrap {
   margin-bottom: 8px;
 }
-.modal-wrap:last-child {
-  margin-bottom: 16px;
-}
+
 .modal-label {
+  display: block;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: #8e8f99;
 }
-.modal-label:not(:last-child) {
+.modal-label {
   margin-bottom: 4px;
 }
 .modal-input {
@@ -582,6 +581,7 @@ ol {
   border-radius: 4px;
   width: 360px;
   height: 40px;
+  outline: transparent;
   background-color: transparent;
   padding-left: 38px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -592,7 +592,7 @@ ol {
 .modal-input-icon {
   position: absolute;
   top: 50%;
-  left: 19px;
+  left: 16px;
   transform: translateY(-50%);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -603,9 +603,13 @@ ol {
 .modal-thumb:focus-within .modal-input-icon {
   fill: #4d5ae5;
 }
+.modal-wrap-comments {
+  margin-bottom: 16px;
+}
 .modal-comments {
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
+  outline: transparent;
   width: 360px;
   min-height: 120px;
   overflow: auto;
@@ -625,38 +629,42 @@ ol {
 .modal-comments::placeholder {
   color: rgba(46, 47, 66, 0.4);
 }
-.modal-check-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  fill: transparent;
-}
+
 .modal-wrap-checkbox {
   display: inline-flex;
   width: 100%;
   align-items: center;
-  margin-bottom: 16px;
-}
-.modal-checkbox:checked + .checkbox-decoration > .modal-check-icon {
-  fill: #f4f4fd;
-}
-.modal-checkbox:checked + .checkbox-decoration {
-  background-color: #404bbf;
-  border: none;
+  margin-bottom: 24px;
 }
 
+.modal-checkbox-label {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+}
 .checkbox-decoration {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
   position: relative;
-  display: block;
+  display: inline-flex;
   border-radius: 2px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   width: 16px;
   height: 16px;
   background-color: transparent;
   margin-right: 8px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.modal-checkbox:checked + .modal-checkbox-label > .checkbox-decoration {
+  background-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
+}
 .modal-link {
   color: #4d5ae5;
   text-decoration: underline;
