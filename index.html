@@ -517,7 +517,7 @@
                 placeholder="E-mail"
             /></label>
 
-            <button type="button" class="footer-form-btn" type="submit">
+            <button class="footer-form-btn" type="submit">
               Subscribe
               <svg class="footer-button-icon" width="24" height="24">
                 <use href="./images/icons.svg#icon-send"></use>
@@ -529,15 +529,13 @@
     </footer>
     <div class="modal-overlay" data-modal>
       <div class="modal">
+        <button class="modal-close" type="button" data-modal-close>
+          <svg class="modal-close-icon" width="8" height="8">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <p class="modal-title">Leave your contacts and we will call you back</p>
         <form action="">
-          <button class="modal-close" type="button" data-modal-close>
-            <svg class="modal-close-icon" width="8" height="8">
-              <use href="./images/icons.svg#icon-close"></use>
-            </svg>
-          </button>
-          <p class="modal-title">
-            Leave your contacts and we will call you back
-          </p>
           <div class="modal-wrap">
             <label for="user-name" class="modal-label">Name</label>
             <div class="modal-thumb">
